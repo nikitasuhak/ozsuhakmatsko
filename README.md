@@ -10,7 +10,7 @@
 Джерело: https://www.kaggle.com/competitions/tabular-playground-series-jul-2022/data
 
 Самостійно завантаж `data.csv` через свій доступ до Kaggle та поклади сюди:
-`/Users/rostyslav/uui/oz/zadanie/data/data.csv`.
+`/Users/rostyslav/uui/oz/zadanie/ozsuhakmatsko/data/data.csv`.
 Якщо CSV уже лежить там, код одразу використає його. Автоматичного завантаження немає.
 Сирі дані не змінюються; їхня фактична форма визначається під час запуску.
 
@@ -26,7 +26,7 @@
 Рекомендовано Python 3.11 або новіший. У терміналі:
 
 ```bash
-cd /Users/rostyslav/uui/oz/zadanie
+cd /Users/rostyslav/uui/oz/zadanie/ozsuhakmatsko
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
@@ -63,3 +63,18 @@ python src/eda.py --data /absolute/path/data.csv --output reports/custom
 порівняти K-Means та Gaussian Mixture, підібрати параметри,
 оцінити структуру кластерів і підготувати документацію за CRISP-DM.
 Поточна структура — початок роботи, а не завершене семестрове завдання.
+
+## Етап 02 — підготовка даних
+
+Відкрий `notebooks/02_preprocessing.ipynb` і виконай всі клітинки або запусти
+`python src/preprocessing.py` із середовища зі встановленими залежностями.
+Графіки, профілі, кореляції й перевірки: `reports/preprocessing/`.
+Матриця, ID та порядок ознак: `data/processed/numeric_standardized.npz`.
+Параметри StandardScaler: `data/processed/scaler_parameters.json`.
+
+Це числовий baseline: 29 ознак без id. Семантика цілочисельних ознак ще не
+підтверджена; трактування їх як числових відстаней є припущенням.
+Рядки не видаляються, хвости за правилом IQR лише позначаються.
+Scaler навчено на всіх рядках для трансдуктивної кластеризації. Для незалежної
+оцінки на відкладених даних необхідно повторно fit тільки на тренувальній частині.
+Повторний запуск перезаписує результати етапу 02. Сирий CSV не змінюється.
