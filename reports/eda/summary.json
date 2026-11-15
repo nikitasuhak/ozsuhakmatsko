@@ -1,0 +1,17 @@
+{
+  "source": "/Users/rostyslav/uui/oz/zadanie/data/data.csv",
+  "sha256": "549a4d597814360932bcc76ef5f876c02944d0d508d709fe617b893ccda654eb",
+  "task": "unsupervised_clustering",
+  "target_column": null,
+  "rows": 98000,
+  "columns": 30,
+  "missing_cells": 0,
+  "duplicate_rows": 0,
+  "id_columns_excluded_from_feature_duplicate_check": [
+    "id"
+  ],
+  "duplicate_feature_rows": 0,
+  "constant_columns_including_missing": [],
+  "python_version": "3.9.6",
+  "pandas_version": "2.3.3"
+}
