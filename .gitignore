@@ -7,3 +7,4 @@ data/*
 !data/.gitkeep
 reports/
 tabular-playground-series-jul-2022/
+models/
